@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 public class Square extends JPanel implements MouseListener {
     //att
     final int SIZE = 50;
+
     Window myWindow;
 
     boolean isMine;
@@ -45,21 +46,40 @@ public class Square extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getButton() == MouseEvent.BUTTON1){
-            if(!this.isMine){
-                this.setBackground(Color.WHITE);
-                repaint();
-                this.isCovered = false;
-            } else {
-                this.setBackground(Color.red);
-                repaint();
-                //myWindow.setLoose();
+            if(this.isMarked == true){
+
             }
-
-
+            else {
+                if(!this.isMine){
+                    this.setBackground(Color.WHITE);
+                    repaint();
+                    this.isCovered = false;
+                } else {
+                    this.setBackground(Color.red);
+                    repaint();
+                    //myWindow.setLoose();
+                }
+            }
         }
         if(e.getButton() == MouseEvent.BUTTON3){
-            drawFlag(getGraphics());
-            this.isMarked = true;
+           if(!this.isCovered || myWindow.getAmtFlags() <= 0){
+
+           }else {
+               if (this.isMarked == true){
+                   setBackground(Color.black);
+                   this.isMarked = false;
+                   myWindow.setAmtFlags(myWindow.getAmtFlags()+1);
+                   repaint();
+                   System.out.println("amount of flags left:"+ myWindow.getAmtFlags());
+               }
+               else {
+                   drawFlag(getGraphics());
+                   this.isMarked = true;
+                   myWindow.setAmtFlags(myWindow.getAmtFlags()-1);
+                   System.out.println("amount of flags left:"+ myWindow.getAmtFlags());
+               }
+           }
+
         }
 
 
@@ -92,6 +112,8 @@ public class Square extends JPanel implements MouseListener {
          int z = (int) (x * 100);
          if(z < 30){
              this.isMine = true;
+             myWindow.setAmtBombs(myWindow.getAmtBombs()+1);
+             myWindow.setAmtFlags(myWindow.getAmtFlags()+1);
          }
          if (z > 30){
              this.isMine = false;
@@ -100,3 +122,5 @@ public class Square extends JPanel implements MouseListener {
     //getsett
 
 }
+
+

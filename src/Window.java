@@ -5,6 +5,12 @@ public class Window extends JFrame {
 
     public boolean loose = false;
 
+    int i = 0;
+
+    int amtBombs = 0;
+
+    int amtFlags = 0;
+
 
     public Window(){
         this.setTitle("MineSweeper.");
@@ -17,7 +23,7 @@ public class Window extends JFrame {
         multiPanel.setLayout(layout);
         multiPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK,10));
 
-        for (int i = 0; i < 18*14; i++){
+        for (i = 0; i < 18*14; i++){
             multiPanel.add(new Square(this));
         }
 
@@ -36,9 +42,21 @@ public class Window extends JFrame {
         this.loose = !this.loose;
     }
 
+    public int getAmtBombs() {
+        return amtBombs;
+    }
 
+    public void setAmtBombs(int amtBombs) {
+        this.amtBombs = amtBombs;
+    }
 
+    public int getAmtFlags() {
+        return amtFlags;
+    }
 
+    public void setAmtFlags(int amtFlags) {
+        this.amtFlags = amtFlags;
+    }
 }
 
 
