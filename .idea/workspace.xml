@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44290fd4-dfc8-4180-97ef-981a1e48e9e8" name="Changes" comment="Now got flags kind of working essentialy Huge hurlde left is to get minesweeper numbers to work, dont know how to do that, will need help">
+    <list default="true" id="44290fd4-dfc8-4180-97ef-981a1e48e9e8" name="Changes" comment="tried making numbers work, progress made, hopefully done this week">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Square.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
@@ -45,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679484923434</updated>
-      <workItem from="1679484925225" duration="25847000" />
+      <workItem from="1679484925225" duration="30090000" />
     </task>
     <task id="LOCAL-00001" summary="Forgord to push stuff but latest update is have just managed to create random bombs">
       <created>1682430475767</created>
@@ -61,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682508596817</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tried making numbers work, progress made, hopefully done this week">
+      <created>1683032292735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683032292735</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +88,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Forgord to push stuff but latest update is have just managed to create random bombs" />
     <MESSAGE value="Now got flags kind of working essentialy Huge hurlde left is to get minesweeper numbers to work, dont know how to do that, will need help" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now got flags kind of working essentialy Huge hurlde left is to get minesweeper numbers to work, dont know how to do that, will need help" />
+    <MESSAGE value="tried making numbers work, progress made, hopefully done this week" />
+    <option name="LAST_COMMIT_MESSAGE" value="tried making numbers work, progress made, hopefully done this week" />
   </component>
 </project>

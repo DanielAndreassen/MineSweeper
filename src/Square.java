@@ -129,6 +129,14 @@ public class Square extends JPanel implements MouseListener {
     }
     //getsett
 
+
+    public int getThisX() {
+        return thisX;
+    }
+
+    public int getThisY() {
+        return thisY;
+    }
 }
 
 

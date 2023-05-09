@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Window extends JFrame {
 
@@ -13,6 +14,8 @@ public class Window extends JFrame {
     int amtBombs = 0;
 
     int amtFlags = 0;
+
+    ArrayList<Integer> cords = new ArrayList<Integer>(Arrays.asList(myX, myY));
 
 
     public Window(){
@@ -28,25 +31,31 @@ public class Window extends JFrame {
 
         for (int i = 0; i < 18*14; i++){
             multiPanel.add(new Square(this));
-            myX=(i%18)+1;
-            myY= ((i/17)+1);
-            /*
-            if(myX <= 18){
+
+            if(myX < 18){
                 myX++;
             }
             else {
                 myX = 1;
                 myY++;
             }
-
-             */
-
+            cords.add(myX, myY);
         }
+
 
         this.add(multiPanel);
         this.pack();
         this.setVisible(true);
+        test(cords);
     }
+
+    public void test(ArrayList chords){
+        for (Object x:chords) {
+            System.out.println(x);
+        }
+    }
+
+
 
 
 
