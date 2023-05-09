@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.ObjectStreamException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -15,7 +16,10 @@ public class Window extends JFrame {
 
     int amtFlags = 0;
 
-    ArrayList<Integer> cords = new ArrayList<Integer>(Arrays.asList(myX, myY));
+    Square[][] cords = new Square[14][18];
+
+    ArrayList<Integer> cordX = new ArrayList<Integer>();
+    ArrayList<Integer> cordY = new ArrayList<Integer>();
 
 
     public Window(){
@@ -29,8 +33,19 @@ public class Window extends JFrame {
         multiPanel.setLayout(layout);
         multiPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK,10));
 
-        for (int i = 0; i < 18*14; i++){
+        for (int i = 0; i < 14; i++ ){
+            for (int j = 0; j < 18; j++){
+                multiPanel.add(cords[i][j] = new Square(this));
+                myX=i;
+                myY=j;
+            }
+        }
+
+       /* for (int i = 0; i < 18*14; i++){
             multiPanel.add(new Square(this));
+
+            cordX.add(myX);
+            cordY.add(myY);
 
             if(myX < 18){
                 myX++;
@@ -39,21 +54,21 @@ public class Window extends JFrame {
                 myX = 1;
                 myY++;
             }
-            cords.add(myX, myY);
         }
 
+        */
 
         this.add(multiPanel);
         this.pack();
         this.setVisible(true);
-        test(cords);
+        //test(cordX, cordY);
     }
 
-    public void test(ArrayList chords){
-        for (Object x:chords) {
-            System.out.println(x);
-        }
+    /*public void test(ArrayList cordX, ArrayList cordY){
+        System.out.println("X Cord" + cordX.get(18) + "Y cord" + cordY.get(18));
     }
+
+     */
 
 
 
@@ -98,6 +113,13 @@ public class Window extends JFrame {
     public void setMyY(int myY) {
         this.myY = myY;
     }
+
+   /* public void test2(){
+        for (Square x : ) {
+
+        }
+    }
+    */
 }
 
 
