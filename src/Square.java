@@ -21,6 +21,8 @@ public class Square extends JPanel implements MouseListener {
 
     boolean isCovered = true;
 
+    int aroundMines = 0;
+
 
 
     //const
@@ -47,6 +49,13 @@ public class Square extends JPanel implements MouseListener {
         g.drawLine(30,10,30,40);
     }
 
+    public void drawMinesAround(Graphics g){
+        String numb = String.valueOf(aroundMines);
+        g.setColor(Color.blue);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 5));
+        g.drawString(numb,0,0);
+    }
+
 
 
 
@@ -61,6 +70,10 @@ public class Square extends JPanel implements MouseListener {
                     this.setBackground(Color.WHITE);
                     repaint();
                     this.isCovered = false;
+                    myWindow.countSurroundingMines();
+                    drawMinesAround(getGraphics());
+                    System.out.println(this.aroundMines);
+
                 } else {
                     this.setBackground(Color.red);
                     repaint();
@@ -136,6 +149,10 @@ public class Square extends JPanel implements MouseListener {
 
     public int getThisY() {
         return thisY;
+    }
+
+    public boolean isMine() {
+        return isMine;
     }
 }
 

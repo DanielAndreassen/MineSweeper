@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44290fd4-dfc8-4180-97ef-981a1e48e9e8" name="Changes" comment="forgot to push yesterday night before handin, fixed cordinates, still hard to figure out how to do the numbers, last thing to do to get a semi functional game is game over if click in a bomb">
+    <list default="true" id="44290fd4-dfc8-4180-97ef-981a1e48e9e8" name="Changes" comment="new system to add the cords of all squares, still not done hope to be done tomorrow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Square.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679484923434</updated>
-      <workItem from="1679484925225" duration="35587000" />
+      <workItem from="1679484925225" duration="42293000" />
     </task>
     <task id="LOCAL-00001" summary="Forgord to push stuff but latest update is have just managed to create random bombs">
       <created>1682430475767</created>
@@ -74,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683619498720</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="new system to add the cords of all squares, still not done hope to be done tomorrow">
+      <created>1683637195838</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683637195838</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +104,7 @@
     <MESSAGE value="Now got flags kind of working essentialy Huge hurlde left is to get minesweeper numbers to work, dont know how to do that, will need help" />
     <MESSAGE value="tried making numbers work, progress made, hopefully done this week" />
     <MESSAGE value="forgot to push yesterday night before handin, fixed cordinates, still hard to figure out how to do the numbers, last thing to do to get a semi functional game is game over if click in a bomb" />
-    <option name="LAST_COMMIT_MESSAGE" value="forgot to push yesterday night before handin, fixed cordinates, still hard to figure out how to do the numbers, last thing to do to get a semi functional game is game over if click in a bomb" />
+    <MESSAGE value="new system to add the cords of all squares, still not done hope to be done tomorrow" />
+    <option name="LAST_COMMIT_MESSAGE" value="new system to add the cords of all squares, still not done hope to be done tomorrow" />
   </component>
 </project>

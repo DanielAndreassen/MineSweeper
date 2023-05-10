@@ -16,11 +16,9 @@ public class Window extends JFrame {
 
     int amtFlags = 0;
 
-    Square[][] cords = new Square[14][18];
+    Square mySquare = new Square(this);
 
-    ArrayList<Integer> cordX = new ArrayList<Integer>();
-    ArrayList<Integer> cordY = new ArrayList<Integer>();
-
+    Square[][] cords = new Square[16][16];
 
     public Window(){
         this.setTitle("MineSweeper.");
@@ -28,50 +26,25 @@ public class Window extends JFrame {
 
         JPanel multiPanel = new JPanel();
 
-        GridLayout layout = new GridLayout(14, 18);
+        GridLayout layout = new GridLayout(15, 15);
 
         multiPanel.setLayout(layout);
         multiPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK,10));
 
-        for (int i = 0; i < 14; i++ ){
-            for (int j = 0; j < 18; j++){
-                multiPanel.add(cords[i][j] = new Square(this));
-                myX=i;
-                myY=j;
+        for (int i = 1; i <= 15; i++ ){
+            for (int j = 1; j <= 15; j++){
+                myX=j;
+                myY=i;
+                multiPanel.add(cords[j][i] = new Square(this));
             }
         }
 
-       /* for (int i = 0; i < 18*14; i++){
-            multiPanel.add(new Square(this));
-
-            cordX.add(myX);
-            cordY.add(myY);
-
-            if(myX < 18){
-                myX++;
-            }
-            else {
-                myX = 1;
-                myY++;
-            }
-        }
-
-        */
 
         this.add(multiPanel);
         this.pack();
         this.setVisible(true);
-        //test(cordX, cordY);
+
     }
-
-    /*public void test(ArrayList cordX, ArrayList cordY){
-        System.out.println("X Cord" + cordX.get(18) + "Y cord" + cordY.get(18));
-    }
-
-     */
-
-
-
 
 
     public boolean isLoose(){
@@ -114,12 +87,38 @@ public class Window extends JFrame {
         this.myY = myY;
     }
 
-   /* public void test2(){
-        for (Square x : ) {
-
+    public void countSurroundingMines() {
+        // Loop through all cells of the game board
+        for (int i = 0; i < 16; i++) {
+            for (int j = 0; j < 16; j++) {
+                // If the current cell does not contain a mine
+                if (!this.mySquare.isMine()) {
+                    int count = 0;
+                    // Check the cells surrounding the current cell
+                    // and increment the count if there is a mine
+                    // Top Cell
+                    if (this.mySquare.getThisX() == i-1 && mySquare.getThisY() == j && this.mySquare.isMine()==true) count++;
+                    // Bottom Cell
+                    if (this.mySquare.getThisX() == i+1 && mySquare.getThisY() == j && this.mySquare.isMine()==true) count++;
+                    // Left Cell
+                    if (this.mySquare.getThisX() == i && mySquare.getThisY() == j-1 && this.mySquare.isMine()==true) count++;
+                    // Right Cell
+                    if (this.mySquare.getThisX() == i && mySquare.getThisY() == j+1 && this.mySquare.isMine()==true) count++;
+                    // Top Left Diagonal
+                    if (this.mySquare.getThisX() == i-1 && mySquare.getThisY() == j-1 && this.mySquare.isMine()==true) count++;
+                    // Bottom Right Diagonal
+                    if (this.mySquare.getThisX() == i+1 && mySquare.getThisY() == j+1 && this.mySquare.isMine()==true) count++;
+                    // Top Right Diagonal
+                    if (this.mySquare.getThisX() == i-1 && mySquare.getThisY() == j+1 && this.mySquare.isMine()==true) count++;
+                    // Bottom Left Diagonal
+                    if (this.mySquare.getThisX() == i+1 && mySquare.getThisY() == j-1 && this.mySquare.isMine()==true) count++;
+                    // Store the count in the "surroundingMines" array
+                    this.mySquare.aroundMines = count;
+                }
+            }
         }
     }
-    */
+
 }
 
 
