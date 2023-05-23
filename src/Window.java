@@ -4,6 +4,10 @@ import java.io.ObjectStreamException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+This in the class for the JFrame,
+ */
+
 public class Window extends JFrame {
 
     public boolean loose = false;
@@ -20,7 +24,7 @@ public class Window extends JFrame {
 
     Square[][] cords = new Square[16][16];
 
-    public Window(){
+    public Window(){  // window constructor
         this.setTitle("MineSweeper.");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -47,7 +51,7 @@ public class Window extends JFrame {
     }
 
 
-    public boolean isLoose(){
+    public boolean isLoose(){ //getter and setter to control what and when the player looses.
         return loose;
     }
 
@@ -87,7 +91,7 @@ public class Window extends JFrame {
         this.myY = myY;
     }
 
-    public void countSurroundingMines() {
+    public void countSurroundingMines() { // test to try and count surrounding bombs.
         // Loop through all cells of the game board
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
@@ -97,21 +101,21 @@ public class Window extends JFrame {
                     // Check the cells surrounding the current cell
                     // and increment the count if there is a mine
                     // Top Cell
-                    if (this.mySquare.getThisX() == i-1 && mySquare.getThisY() == j && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i-1 && mySquare.getThisY() == j && mySquare.isMine()==true) count++;
                     // Bottom Cell
-                    if (this.mySquare.getThisX() == i+1 && mySquare.getThisY() == j && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i+1 && mySquare.getThisY() == j && mySquare.isMine()==true) count++;
                     // Left Cell
-                    if (this.mySquare.getThisX() == i && mySquare.getThisY() == j-1 && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i && mySquare.getThisY() == j-1 && mySquare.isMine()==true) count++;
                     // Right Cell
-                    if (this.mySquare.getThisX() == i && mySquare.getThisY() == j+1 && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i && mySquare.getThisY() == j+1 && mySquare.isMine()==true) count++;
                     // Top Left Diagonal
-                    if (this.mySquare.getThisX() == i-1 && mySquare.getThisY() == j-1 && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i-1 && mySquare.getThisY() == j-1 && mySquare.isMine()==true) count++;
                     // Bottom Right Diagonal
-                    if (this.mySquare.getThisX() == i+1 && mySquare.getThisY() == j+1 && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i+1 && mySquare.getThisY() == j+1 && mySquare.isMine()==true) count++;
                     // Top Right Diagonal
-                    if (this.mySquare.getThisX() == i-1 && mySquare.getThisY() == j+1 && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i-1 && mySquare.getThisY() == j+1 && mySquare.isMine()==true) count++;
                     // Bottom Left Diagonal
-                    if (this.mySquare.getThisX() == i+1 && mySquare.getThisY() == j-1 && this.mySquare.isMine()==true) count++;
+                    if (mySquare.getThisX() == i+1 && mySquare.getThisY() == j-1 && mySquare.isMine()==true) count++;
                     // Store the count in the "surroundingMines" array
                     this.mySquare.aroundMines = count;
                 }
